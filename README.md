@@ -1,17 +1,17 @@
-<h1 align="center">Hi 👋, I'm Gans</h1>
-<h3 align="center">A passionate technotrain</h3>
+<h1 align="center">Les Puking Gas >L.F.G< 😅, I'm Gans</h1>
+<h3 align="center">A Passionate Buidler</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=arcxteam&label=Profile%20views&color=0e75b6&style=flat" alt="arcxteam" /> </p>
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=arcxteam" alt="arcxteam" /></a> </p>
 
-- 🌱 I’m currently working as **engineer**
+- 👨🏻‍💻 I’m currently working as **Engineer, Web3, Architect, 
 
-- 👨‍💻 All of my projects are available at [github](https://github.com/arcxteam)
+- 💡 All of my show up are airdroping at [Greyscope&Co](https://0xgan.xyz)
 
-- 📝 I regularly write articles on [buidl](https://dev2ops.net/en/)
+- 🔳 I regularly do action of cuan [cuandrop](https://dev2ops.net/en/)
 
-- 📫 How to reach me **arcxteam**
+- 📧 Airdrop for me at **cuan@0xgan.xyz**
 
 
 <br/>
