@@ -1,13 +1,10 @@
 <h1 align="center">Les Puking Gas >L.F.G< 😅, I'm Gans</h1>
 <h3 align="center">A Passionate Buidler</h3>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=arcxteam&label=Profile%20views&color=0e75b6&style=flat" alt="arcxteam" /> </p>
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=arcxteam" alt="arcxteam" /></a> </p>
+- 👨🏻‍💻 I’m currently working as **Engineer, Web3 Jobs, Architect**
 
-- 👨🏻‍💻 I’m currently working as **Engineer, Web3, Architect, 
-
-- 💡 All of my show up are airdroping at [Greyscope&Co](https://0xgan.xyz)
+- 💡 All of my show up are dropping at [Greyscope&Co](https://0xgan.xyz)
 
 - 🔳 I regularly do action of cuan [cuandrop](https://dev2ops.net/en/)
 
