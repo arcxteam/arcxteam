@@ -1,6 +1,7 @@
 <h1 align="center">Les Puking Gas >L.F.G< 😅, I'm Gans</h1>
 <h3 align="center">A Passionate Buidler</h3>
 
+<p align="center"> <img src="https://komarev.com/ghpvc/?username=arcxteam&label=Profile%20views&color=0e75b6&style=flat" alt="arcxteam" /> </p>
 
 - 👨🏻‍💻 I’m currently working as **Engineer, Web3 Jobs, Architect**
 
@@ -9,7 +10,6 @@
 - 🔳 I regularly do action of cuan [cuandrop](https://dev2ops.net/en/)
 
 - 📧 Airdrop for me at **cuan@0xgan.xyz**
-
 
 <br/>
 
