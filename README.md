@@ -5,9 +5,9 @@
 
 👨🏻‍💻 I’m currently working as **Engineer, Web3 Jobs, Architect**
 
-💡 All of my show up are dropping at [Greyscope&Co](https://greyscope.xyz)
+💡 All of my show up are dropping at [Greyscope & Co](https://greyscope.xyz)
  
-🔳 I regularly do action of cuan services [cuannode](https://cuannode.greyscope.xyz/)
+🔳 I regularly do action of cuan services [CUANNODE](https://cuannode.greyscope.xyz/)
 
 
 <br/>
@@ -16,10 +16,12 @@
 | ------------- | ------------- |
 
 
-<h3 align="left">📧 Airdrop for me at cuan@greyscopexyz</h3>
+<h3 align="left">📧 Airdrop for me at cuan@greyscope.xyz</h3>
 <p align="left">
 </p>
 
 <h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-official.svg" alt="bash" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://cloud.google.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="gcp" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a>  </p>
+
+<p align="left"> <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-official.svg" alt="bash" width="40" height="40"/> </a> 
+<a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://cloud.google.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="gcp" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a>  </p>
 
