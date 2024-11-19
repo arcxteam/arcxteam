@@ -1,39 +1,45 @@
-<h1 align="center">\/\Code for Fun, I'm Gans/\/</h1>
-<h2 align="center">A Passionate Buidler</h2>
+<h1 align="center"><samp>:octocat:Code for Fun, It's Gans:octocat::octocat:</h1>
+<h2 align="center"><samp>A Passionate Buidler</h2>
 
 <p align="center">
-  <samp>👨🏻‍💻 I am currently working as /> Engineer, Web3 Jobs, Architect <p align="center">
-  <samp>💡 All of my show up are dropping at /> Greyscope&Co <p align="center">
-  <samp>📚 Currently exploring the depths of Web3 services at /> https://cuannode.greyscope.xyz
+  <samp>:octocat: I am currently working as Engineer, Web3 Jobs, Architect<p align="center">
+  <samp>💡 All of my show up is dropping to <img src="https://img.shields.io/badge/Greyscope&Co_-8a2be2"/><p align="center">
+  <samp>📚 Currently exploring the depths of Web3 services at <img src="https://img.shields.io/badge/CUANNODE_-fef000"/><p align="center">
 </p>
-
+    
 ***
 
-<h2 align="center">What We Do? "Code, Collaborate, Create"</h2>
+<h2 align="center"><samp>What We Do? "Code, Collaborate, Create"</h2>
 <p align="center">
-  <samp>I am deeply committed to the blockchain space, supporting projects at every stage—from development and testing to testnet and mainnet launches. As a engineer and growth hacking specialist, I am passionate about building dApps that are pivotal during the testnet phase. A dedicated Web3 enthusiast, I have actively participated in numerous testnet and blockchain node operations.
+  <samp>I am deeply committed to the blockchain space, supporting projects at every stage from development and testing to testnet and mainnet launches. As a engineer and growth hacking specialist, I am passionate about building dApps that are pivotal during the testnet phase. A dedicated Web3 enthusiast, I have actively participated in numerous testnet and blockchain node operations.
   </samp>
   <br> <br>
-  <img src="https://komarev.com/ghpvc/?username=arcxteam&label=Profile%20views&color=464fff&style=flat" alt="arcxteam" />
+  <img src="https://komarev.com/ghpvc/?username=arcxteam&label=Profile%20views&color=8a2be2&style=flat" alt="arcxteam" />
 </p>
 
+<h3 align="center"><samp>📧 Airdrop For Me at <img src="https://img.shields.io/badge/email_-cuan@greyscope.xyz-8a2be2"/></h3>
+  
+***
 
-## 📊 &nbsp;Stats
+## 📊 <samp>Git Stats
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=arcxteam&layout=compact&theme=dark&hide_border=false)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=arcxteam&layout=compact&theme=dark&bg_color=0d1116&title_color=8A2BE2&text_color=fef000&icon_color=fef000&hide_border=true&card_width=470)
 
-![0xgrey Github Stats](https://github-readme-stats.vercel.app/api?username=arcxteam&hide=contribs,prs&show_icons=true&bg_color=0d1116&title_color=464fff&text_color=fef000&icon_color=ffffff)
+![0xgrey Github Stats](https://github-readme-stats.vercel.app/api?username=arcxteam&hide=contribs,prs&show_icons=true&bg_color=0d1116&title_color=8a2be2&text_color=fef000&icon_color=8a2be2&hide_border=true)
 
 ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=arcxteam&theme=yellowdark&date_format=j%20M%5B%20Y%5D&card_width=470&card_height=120&background=000000)
 
 ***
 
-<h3 align="center">📧 Airdrop for me at cuan@greyscope.xyz</h3>
-<p align="center">
-</p>
+<h2 align="center"><samp>On Duty Langs & Tool</h2>
 
-<h3 align="center">On Duty Langs & Tool</h3>
-
-<p align="center"> <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-official.svg" alt="bash" width="40" height="40"/> </a> 
-<a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://cloud.google.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="gcp" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a>  </p>
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Python](https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=fef000)
+![ASTRO](https://img.shields.io/badge/Astro-ff8c00?style=for-the-badge&logo=astro&logoColor=black)
+![CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![BASH](https://img.shields.io/badge/Shell_Script-66ff00?style=for-the-badge&logo=gnu-bash&logoColor=black)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Solidity](https://img.shields.io/badge/Solidity-e6e6e6?style=for-the-badge&logo=solidity&logoColor=black)
 
