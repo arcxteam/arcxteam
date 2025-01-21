@@ -33,6 +33,8 @@
 
 <h2 align="center"><samp>On Duty Langs & Tool</h2>
 
+![Contribution Graph](https://github-readme-activity-graph.vercel.app/graph?username=arcxteam&bg_color=0d1116&color=fef000&line=8a2be2&point=fef000&area=true&hide_border=true)
+
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Python](https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=fef000)
@@ -42,4 +44,3 @@
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Solidity](https://img.shields.io/badge/Solidity-e6e6e6?style=for-the-badge&logo=solidity&logoColor=black)
-
