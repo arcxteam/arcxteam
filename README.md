@@ -1,5 +1,5 @@
-<h1 align="center"><samp>:octocat:Code for Fun, It's Gans:octocat::octocat:</h1>
-<h2 align="center"><samp>A Passionate Buidler</h2>
+<h1 align="center"><samp>Code for Fun, It's Gans</h1>
+<h2 align="center"><samp>:octocat:A Passionate Buidler:octocat:</h2>
 
 <p align="center">
   <samp>:octocat: I am currently working as Engineer, Web3 Jobs, Architect<p align="center">
