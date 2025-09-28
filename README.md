@@ -1,15 +1,15 @@
-<h1 align="center"><samp>Code for Fun, It's Gans</h1>
+<h1 align="center"><samp>Code for Fun, It's Gr3y</h1>
 <h2 align="center"><samp>:octocat:A Passionate Buidler:octocat:</h2>
 
 <p align="center">
   <samp>:octocat: I am currently working as Engineer, Web3 Jobs, Architect<p align="center">
-  <samp>💡 All of my show up is dropping to <img src="https://img.shields.io/badge/Greyscope&Co_-8a2be2"/><p align="center">
-  <samp>📚 Currently exploring the depths of Web3 services at <img src="https://img.shields.io/badge/CUANNODE_-fef000"/><p align="center">
+  <samp>💡 All of my show up is dropping to buidler<p align="center">
+  <samp>📚 Currently exploring the depths of Web3 services at <mark>Greyscope&Co</mark> <p align="center">
 </p>
     
 ***
 
-<h2 align="center"><samp>What We Do? "Code, Collaborate, Create"</h2>
+<h2 align="center"><samp>What We Do? "Contribute, Collaborate, Create"</h2>
 <p align="center">
   <samp>I am deeply committed to the blockchain space, supporting projects at every stage from development and testing to testnet and mainnet launches. As a engineer and growth hacking specialist, I am passionate about building dApps that are pivotal during the testnet phase. A dedicated Web3 enthusiast, I have actively participated in numerous testnet and blockchain node operations.
   </samp>
