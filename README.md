@@ -6,7 +6,11 @@
   <samp>💡 All of my show up is dropping to buidler<p align="center">
   <samp>📚 Currently exploring the depths of Web3 services at <mark>Greyscope&Co</mark> <p align="center">
 </p>
-    
+
+![snake gif](https://github.com/arcxteam/arcxteam/main/output/github-snake-dark.svg)
+
+![snake gif](https://github.com/arcxteam/arcxteam/refs/heads/main/output/github-snake-dark.svg)
+
 ***
 
 <h2 align="center"><samp>What We Do? "Contribute, Collaborate, Create"</h2>
