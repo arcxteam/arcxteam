@@ -39,13 +39,12 @@ jobs:
           fi
           ls -la assets
 
-      - name: Push to Main
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./assets
-          publish_branch: main
-          commit_message: "Update snake animation 🐍"
-          force_orphan: false
-          allow_empty_commit: true  # Izinkan commit kosong jika file tidak berubah
-          keep_files: true  # Pertahankan file existing
+      - name: Commit and Push to Main
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/*
+          git commit -m "Update snake animation 🐍" || echo "No changes to commit"
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
