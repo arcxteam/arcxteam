@@ -1,0 +1,49 @@
+name: GitHub Snake Game
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Run everyday
+  workflow_dispatch: # trigger manual
+  push:
+    branches:
+      - main
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write # write to repo
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Generate Snake Animations
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            assets/github-snake.svg?color_snake=#FF4500
+            assets/github-snake-dark.svg?palette=github-dark&color_snake=#FF4500
+            assets/ocean.gif?color_snake=#FF4500&color_dots=#FF4500,#FF8C00,#FFA500,#FF7F50,#FF6347
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify Files
+        run: |
+          mkdir -p assets
+          if [ ! -d "./assets" ] || [ -z "$(ls -A assets)" ]; then
+            echo "Error: assets folder blank!"
+            exit 1
+          fi
+          ls -la assets
+
+      - name: Push to Main
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./assets
+          publish_branch: main
+          commit_message: "Update snake animation 🐍"
+          force_orphan: false
