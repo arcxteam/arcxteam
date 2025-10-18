@@ -47,3 +47,5 @@ jobs:
           publish_branch: main
           commit_message: "Update snake animation 🐍"
           force_orphan: false
+          allow_empty_commit: true  # Izinkan commit kosong jika file tidak berubah
+          keep_files: true  # Pertahankan file existing
