@@ -7,11 +7,16 @@
   <samp>📚 Currently exploring the depths of Web3 services at <mark>Greyscope&Co</mark> <p align="center">
 </p>
 
+<!-- SVG versions are commented out as we now use only the GIF version -->
+<!--
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/arcxteam/arcxteam/main/assets/github-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/arcxteam/arcxteam/main/assets/github-snake.svg" />
   <img alt="github-snake" src="https://raw.githubusercontent.com/arcxteam/arcxteam/main/assets/github-snake.svg" />
 </picture>
+-->
+
+![Custom Snake GIF](https://raw.githubusercontent.com/arcxteam/arcxteam/main/assets/custom-snake.gif)
 
 ***
 
