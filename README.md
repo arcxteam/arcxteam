@@ -28,11 +28,17 @@
   <img src="https://komarev.com/ghpvc/?username=arcxteam&label=Profile%20views&color=8a2be2&style=flat" alt="arcxteam" />
 </p>
 
-<h3 align="center"><samp>📧 Airdrop For Me at <img src="https://img.shields.io/badge/email_-cuan@greyscope.xyz-8a2be2"/></h3>
+<h3 align="center"><samp>📧 Airdrop For Me <img src="https://img.shields.io/badge/email_-cuan@greyscope.xyz-8a2be2"/></h3>
+
+<h4 align="center">
+  README.md GUIDES
+  <a href="https://github.com/arcxteam/arcxteam/blob/main/README-GUIDES.md">
+    <img src="https://img.shields.io/badge/Here-FORK ME-F7DF1E" alt="FORK ME">
+  </a></h4>
   
 ***
 
-## 📊 <samp>Git Stats
+<div align="center"><h2><samp>📊 Git Stats</h2>
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=arcxteam&layout=compact&theme=dark&bg_color=0d1116&title_color=8A2BE2&text_color=fef000&icon_color=fef000&hide_border=true&card_width=470)
 
@@ -42,7 +48,7 @@
 
 ***
 
-<h2 align="center"><samp>On Duty Langs & Tool</h2>
+<h2 align="center"><samp>:octocat: On Duty Langs & Tool</h2>
 
 ![Contribution Graph](https://github-readme-activity-graph.vercel.app/graph?username=arcxteam&bg_color=0d1116&color=fef000&line=8a2be2&point=fef000&area=true&hide_border=true)
 
