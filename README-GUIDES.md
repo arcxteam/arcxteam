@@ -22,7 +22,7 @@ Welcome to the guide for setting up and customizing a dynamic GitHub profile lik
      ```
      - Replace `[username]` and `[repo]` with your GitHub username and repository name (e.g., `arcxteam/arcxteam`).
 3. **Commit Changes**:
-   - Use the commit message `Update snake animation 🐍`.
+   - Use the commit message `Update snake animation`.
    - Run the workflow manually in the **Actions** tab to generate animation files.
 4. **Verify**:
    - Visit your GitHub profile (https://github.com/[username]) to ensure the animation appears in your README.
@@ -51,7 +51,7 @@ Customize the snake animation by editing `snake.yml`:
   ```
 - **Customization Steps**:
   1. Edit `snake.yml` in `.github/workflows/`.
-  2. Commit with the message `Update snake animation!`.
+  2. Commit with the message `Update snake animation`.
   3. Run the workflow in **Actions** to update animations.
   4. Check the results in your `README.md`.
 
@@ -94,25 +94,26 @@ Showcase your skills with technology badges:
   ![Solidity](https://img.shields.io/badge/Solidity-e6e6e6?style=for-the-badge&logo=solidity&logoColor=black)
   ```
 - **Customizing Badges**:
-  - Use https://shields.io/ to create new badges.
-  - Adjust colors (`color`), logos (`logo`), and labels (`label`) to match your skills.
-  - Example: Add a Node.js badge:
+  - Use search https://simpleicons.org/?q=insta to create new badges.
+  - Adjust colors background (`FF0069`), badge&logo(`instagram`), and logoColor labels (`white`) to match your skills.
+  - Example: Add a Instagram badge:
+   ![instagram](https://img.shields.io/badge/instagram-FF0069?style=for-the-badge&logo=instagram&logoColor=white)
     ```markdown
-    ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+    ![instagram](https://img.shields.io/badge/instagram-FF0069?style=for-the-badge&logo=instagram&logoColor=white)
     ```
 
 ## Adding a Link to README-GUIDES
 To include a clickable link to your `README-GUIDES.md` file, styled like the original profile:
 1. Add the following code to your `README.md`:
    ```markdown
-   
-     
-       
-     
-   
+   <h5 align="center">
+     <a href="https://github.com/USERNAME/USERNAME/blob/main/README-GUIDES.md" style="text-decoration: none;">
+       <img src="https://img.shields.io/badge/PROFILE-FORK_GUIDES-F7DF1E?style=for-the-badge&logo=github&logoColor=white" alt="GUIDES">
+     </a>
+   </h5>
    ```
    - Replace `[username]/[repo]` with your GitHub username and repository name (e.g., `arcxteam/arcxteam`).
-2. Commit with the message `Update profile design!`.
+2. Commit with the message `Update profile design`.
 3. Ensure `README-GUIDES.md` exists in the root of your repository. If not, create it (refer to https://github.com/arcxteam/arcxteam/blob/main/README-GUIDES.md for an example).
 4. Verify the badge appears in your README and the link directs to `README-GUIDES.md`.
 
@@ -144,15 +145,15 @@ When forking this repository (e.g., from `arcxteam/arcxteam`):
    - Include technology badges relevant to your skills.
    - Use `github-readme-stats` with your username for personalized stats.
 5. **Commit and Run Workflow**:
-   - Commit changes with `Update snake animation!` for animations or `Update profile design 📝` for README updates.
+   - Commit changes with `Update snake animation` for animations or `Update profile design` for README updates.
    - Run the workflow in **Actions** to generate new animations.
 6. **Verify Profile**:
    - Ensure animations, stats, and badges appear on your GitHub profile.
    - Check GitHub Pages to confirm files in `assets/` are deployed correctly.
 
 ## Commit Message Guidelines
-- Use `Update snake animation!` for color or theme changes.
-- Use `Update profile design!` for README or visual updates.
+- Use `Update snake animation` for color or theme changes.
+- Use `Update profile design` for README or visual updates.
 - Use `Update workflow to push directly to main` for workflow structure changes.
 
 ## Additional Notes
