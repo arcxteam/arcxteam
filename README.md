@@ -25,17 +25,17 @@
   <samp>I am deeply committed to the blockchain space, supporting projects at every stage from development and testing to testnet and mainnet launches. As a engineer and growth hacking specialist, I am passionate about building dApps that are pivotal during the testnet phase. A dedicated Web3 enthusiast, I have actively participated in numerous testnet and blockchain node operations.
   </samp>
   <br> <br>
-  <img src="https://komarev.com/ghpvc/?username=arcxteam&label=Profile%20views&color=8a2be2&style=flat" alt="arcxteam" />
+  <img src="https://komarev.com/ghpvc/?username=arcxteam&label=Visitor%20Views&color=8a2be2&style=flat" alt="arcxteam" />
 </p>
 
-<h3 align="center"><samp>📧 Airdrop For Me <img src="https://img.shields.io/badge/email_-cuan@greyscope.xyz-8a2be2"/></h3>
+<h5 align="center"><samp><img src="https://img.shields.io/badge/email-cuan@greyscope.xyz-8a2be2?style=for-the-badge&logo=gmail&logoColor=white"/></h5>
 
-<h4 align="center">
-  README.md GUIDES
-  <a href="https://github.com/arcxteam/arcxteam/blob/main/README-GUIDES.md">
-    <img src="https://img.shields.io/badge/Here-FORK ME-F7DF1E" alt="FORK ME">
-  </a></h4>
-  
+<h5 align="center">
+  <a href="https://github.com/arcxteam/arcxteam/blob/main/README-GUIDES.md" style="text-decoration: none;">
+    <img src="https://img.shields.io/badge/PROFILE-FORK_GUIDES-F7DF1E?style=for-the-badge&logo=github&logoColor=white" alt="GUIDES">
+  </a>
+</h5>
+
 ***
 
 <div align="center"><h2><samp>📊 Git Stats</h2>
