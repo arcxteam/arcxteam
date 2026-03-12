@@ -28,7 +28,10 @@
     &#9656; &nbsp;Deeply committed to blockchain — from <strong>devnet prototype</strong> to <strong>mainnet production</strong><br>
     &#9656; &nbsp;Empowering Web3 projects to scale strategically with data-driven insights &amp; early-stage discovery<br>
     &#9656; &nbsp;Passionate about building dApps pivotal during <strong>testnet phase</strong> &amp; hackathon launches<br>
-    &#9656; &nbsp;Reach me: <a href="mailto:team@greyscope.xyz">team@greyscope.xyz</a>
+    &#9656; &nbsp;Reach me:
+    <a href="mailto:team@greyscope.xyz">
+      <img src="https://img.shields.io/badge/-%20-EA4335?style=flat-square&logo=gmail&logoColor=white" title="team@greyscope.xyz" style="vertical-align:middle"/>
+    </a>
   </samp>
 </p>
 
@@ -91,14 +94,29 @@
 
 ![Custom Snake GIF](https://raw.githubusercontent.com/arcxteam/arcxteam/main/assets/custom-snake.gif)
 
-<!-- Gitanimals — walking animals (lines mode, live) -->
-<a href="https://gitanimals.org" target="_blank">
-  <img src="https://render.gitanimals.org/lines/arcxteam" width="100%" />
-</a>
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  GITANIMALS — cara aktifkan / nonaktifkan:                  ║
+  ║                                                              ║
+  ║  AKTIF   → hapus tag <!-- HIDDEN-START dan HIDDEN-END -->    ║
+  ║  NONAKTIF → bungkus seluruh blok dengan:                    ║
+  ║             <!-- HIDDEN-START                               ║
+  ║             ... blok gambar ...                             ║
+  ║             HIDDEN-END -->                                  ║
+  ║                                                              ║
+  ║  Untuk stop workflow: buka .github/workflows/gitanimals.yml  ║
+  ║  lalu ubah "on:" menjadi "on: [workflow_dispatch]" saja.    ║
+  ╚══════════════════════════════════════════════════════════════╝
+-->
 
-<!-- Gitanimals — farm mode (cats & companions collected) -->
+<!-- Gitanimals lines — 3 kucing berjalan bersamaan (per-character params) -->
 <a href="https://gitanimals.org" target="_blank">
-  <img src="https://render.gitanimals.org/farms/arcxteam" width="100%" />
+  <img
+    src="https://render.gitanimals.org/lines/arcxteam?with-cat=1&with-cat-ghost=1&with-little-chick=1&with-penguin=1&with-slime=1"
+    width="640"
+    height="120"
+    alt="gitanimals walking"
+  />
 </a>
 
 </div>
@@ -141,16 +159,11 @@
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
   <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=green" />
   <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
-  <img src="https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white" />
-  <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" />
-  <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" />
-  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
   <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
-  <img src="https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white" />
+  <img src="https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white" />
+  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
   <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" />
   <img src="https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white" />
-  <img src="https://img.shields.io/badge/n8n-EA4B71?style=for-the-badge&logo=n8n&logoColor=white" />
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
 </p>
 
 </div>

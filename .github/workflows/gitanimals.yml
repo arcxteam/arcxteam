@@ -1,9 +1,24 @@
 name: Gitanimals Cat Update
 
+# ╔══════════════════════════════════════════════════════════════════╗
+# ║  CARA NONAKTIFKAN workflow ini tanpa menghapus file:            ║
+# ║                                                                  ║
+# ║  1. Ubah blok "on:" di bawah menjadi hanya:                    ║
+# ║       on: [workflow_dispatch]                                    ║
+# ║     → workflow tidak akan auto-run, hanya bisa trigger manual.  ║
+# ║                                                                  ║
+# ║  2. Atau disable via GitHub UI:                                  ║
+# ║     Actions → pilih workflow ini → ⋯ → Disable workflow         ║
+# ║                                                                  ║
+# ║  3. Untuk sembunyikan gambar di README saja (tanpa stop job):   ║
+# ║     Bungkus blok <a>...</a> gitanimals di README dengan:        ║
+# ║     <!-- dan -->  (jadikan HTML comment)                        ║
+# ╚══════════════════════════════════════════════════════════════════╝
+
 on:
   schedule:
-    - cron: "0 3 * * *" # Run daily at 03:00 UTC (offset from snake)
-  workflow_dispatch: # trigger manual
+    - cron: "0 3 * * *" # Run daily 03:00 UTC — hapus/nonaktifkan baris ini untuk stop auto-run
+  workflow_dispatch: # trigger manual tetap tersedia
   push:
     branches:
       - main
@@ -22,20 +37,17 @@ jobs:
       - name: Download Gitanimals SVGs
         run: |
           mkdir -p assets
-          # Lines mode — walking cats & animals based on contributions
-          curl -sL "https://render.gitanimals.org/lines/arcxteam" \
+          # Lines mode — kucing & hewan berjalan berdasarkan kontribusi
+          curl -sL "https://render.gitanimals.org/lines/arcxteam?with-cat=1&with-cat-ghost=1&with-little-chick=1&with-penguin=1&with-slime=1" \
             -o assets/gitanimals-lines.svg
-          # Farm mode — all collected companions displayed in habitat
-          curl -sL "https://render.gitanimals.org/farms/arcxteam" \
-            -o assets/gitanimals-farm.svg
           echo "=== Downloaded files ==="
-          ls -lh assets/gitanimals-*.svg
+          ls -lh assets/gitanimals-*.svg || true
 
       - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/gitanimals-lines.svg assets/gitanimals-farm.svg
+          git add assets/gitanimals-lines.svg
           git commit -m "chore: update gitanimals renders [skip ci]" || echo "No changes to commit"
           git push origin main
         env:
