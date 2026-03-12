@@ -1,18 +1,18 @@
 name: Gitanimals Cat Update
 
 # ╔══════════════════════════════════════════════════════════════════╗
-# ║  CARA NONAKTIFKAN workflow ini tanpa menghapus file:            ║
+# ║  HOW TO DISABLE this workflow without deleting the file:        ║
 # ║                                                                  ║
-# ║  1. Ubah blok "on:" di bawah menjadi hanya:                    ║
+# ║  1. Change the "on:" block below to only:                       ║
 # ║       on: [workflow_dispatch]                                    ║
-# ║     → workflow tidak akan auto-run, hanya bisa trigger manual.  ║
+# ║     -> workflow will not auto-run, manual trigger only.         ║
 # ║                                                                  ║
-# ║  2. Atau disable via GitHub UI:                                  ║
-# ║     Actions → pilih workflow ini → ⋯ → Disable workflow         ║
+# ║  2. Or disable via GitHub UI:                                   ║
+# ║     Actions -> select this workflow -> ... -> Disable workflow  ║
 # ║                                                                  ║
-# ║  3. Untuk sembunyikan gambar di README saja (tanpa stop job):   ║
-# ║     Bungkus blok <a>...</a> gitanimals di README dengan:        ║
-# ║     <!-- dan -->  (jadikan HTML comment)                        ║
+# ║  3. To hide the image from README only (without stopping job):  ║
+# ║     Wrap the <a>...</a> gitanimals block in README with:        ║
+# ║     <!-- and -->  (turn it into an HTML comment)                ║
 # ╚══════════════════════════════════════════════════════════════════╝
 
 on:
