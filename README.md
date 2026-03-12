@@ -23,15 +23,14 @@
 
 <p align="center">
   <samp>
-    &#9656; &nbsp;Civil Engineer · Web3 Development · Applied AI Systems with our <strong>Greyscope&amp;Co</strong><br>
-    &#9656; &nbsp;Bridging <strong>node-stake infrastructure</strong>, autonomous AI agents &amp; community-powered discovery<br>
-    &#9656; &nbsp;Deeply committed to blockchain — from <strong>devnet prototype</strong> to <strong>mainnet production</strong><br>
-    &#9656; &nbsp;Empowering Web3 projects to scale strategically with data-driven insights &amp; early-stage discovery<br>
-    &#9656; &nbsp;Passionate about building dApps pivotal during <strong>testnet phase</strong> &amp; hackathon launches
+    Civil Engineer · Web3 Development · Applied AI Systems with our <strong>Greyscope&amp;Co</strong><br>
+    Bridging <strong>node-stake infrastructure</strong>, autonomous AI agents &amp; community-powered discovery<br>
+    Deeply committed to blockchain — from <strong>devnet prototype</strong> to <strong>mainnet production</strong><br>
+    Empowering Web3 projects to scale strategically with data-driven insights &amp; early-stage discovery<br>
+    Passionate about building dApps pivotal during <strong>testnet phase</strong> &amp; hackathon launches
   </samp>
 </p>
 
-***
 
 <!-- Social Media -->
 <h2 align="center"><samp>Connect With Me</samp></h2>
@@ -65,7 +64,7 @@
 
 <p align="center">
   <a href="https://greyscope.xyz">
-    <img src="https://img.shields.io/badge/web-www.greyscope.xyz-8a2be2?style=for-the-badge&logo=safari&logoColor=F7DF1E"/>
+    <img src="https://img.shields.io/badge/visit-www.greyscope.xyz-8a2be2?style=for-the-badge&logo=safari&logoColor=F7DF1E"/>
   </a>
   <a href="https://github.com/arcxteam/arcxteam/blob/main/README-GUIDES.md">
     <img src="https://img.shields.io/badge/PROFILE-FORK_GUIDES-F7DF1E?style=for-the-badge&logo=github&logoColor=black" alt="GUIDES">
@@ -122,8 +121,6 @@
 
 </div>
 
-***
-
 <!-- Activity & Tools -->
 <div align="center">
 
@@ -145,7 +142,7 @@
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
   <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=green" />
   <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/PostgreSQL-6236FF?style=for-the-badge&logo=postgresql&logoColor=white" />
   <img src="https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white" />
   <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
   <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" />

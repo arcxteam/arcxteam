@@ -1,27 +1,12 @@
 name: Gitanimals Cat Update
 
-# ╔══════════════════════════════════════════════════════════════════╗
-# ║  HOW TO DISABLE this workflow without deleting the file:        ║
-# ║                                                                  ║
-# ║  1. Change the "on:" block below to only:                       ║
-# ║       on: [workflow_dispatch]                                    ║
-# ║     -> workflow will not auto-run, manual trigger only.         ║
-# ║                                                                  ║
-# ║  2. Or disable via GitHub UI:                                   ║
-# ║     Actions -> select this workflow -> ... -> Disable workflow  ║
-# ║                                                                  ║
-# ║  3. To hide the image from README only (without stopping job):  ║
-# ║     Wrap the <a>...</a> gitanimals block in README with:        ║
-# ║     <!-- and -->  (turn it into an HTML comment)                ║
-# ╚══════════════════════════════════════════════════════════════════╝
-
 on:
-  schedule:
-    - cron: "0 3 * * *" # Run daily at 03:00 UTC — remove this line to stop auto-run
-  workflow_dispatch: # manual trigger always available
-  push:
-    branches:
-      - main
+  workflow_dispatch: # manual trigger only
+  # --- TO ENABLE AUTO-RUN: uncomment the lines below ---
+  # schedule:
+  #   - cron: "0 3 * * *"  # daily at 03:00 UTC
+  # push:
+  #   branches: [main]
 
 jobs:
   generate:
@@ -34,14 +19,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Download Gitanimals SVGs
+      - name: Download Gitanimals SVG
         run: |
           mkdir -p assets
-          # Lines mode
           curl -sL "https://render.gitanimals.org/lines/arcxteam?with-cat=1&with-cat-ghost=1&with-little-chick=1&with-penguin=1&with-slime=1" \
             -o assets/gitanimals-lines.svg
-          echo "=== Downloaded files ==="
-          ls -lh assets/gitanimals-*.svg || true
 
       - name: Commit and Push
         run: |

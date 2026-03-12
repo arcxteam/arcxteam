@@ -151,6 +151,66 @@ When forking this repository (e.g., from `arcxteam/arcxteam`):
    - Ensure animations, stats, and badges appear on your GitHub profile.
    - Check GitHub Pages to confirm files in `assets/` are deployed correctly.
 
+## Adding Gitanimals (Walking Cats & Companions)
+
+Gitanimals renders pixel-art animals that walk across your README based on your GitHub contribution count.
+
+1. **Add to README.md**:
+   ```markdown
+   <div align="center">
+   <a href="https://gitanimals.org" target="_blank">
+     <img
+       src="https://render.gitanimals.org/lines/[username]?with-cat=1&with-cat-ghost=1&with-little-chick=1&with-penguin=1&with-slime=1"
+       width="640"
+       height="120"
+       alt="gitanimals walking"
+     />
+   </a>
+   </div>
+   ```
+   - Replace `[username]` with your GitHub username.
+   - `width="640" height="120"` keeps it compact and horizontal (similar to the snake).
+   - The `?with-*=1` parameters request specific animal types. Available types include: `cat`, `cat-ghost`, `little-chick`, `penguin`, `slime`, `rabbit`, `dog`, `quokka`, and more — see [gitanimals.org](https://gitanimals.org).
+
+2. **Auto-update via Workflow** (optional):
+   - Create `.github/workflows/gitanimals.yml` to download and commit the SVG daily:
+     ```yaml
+     name: Gitanimals Update
+     on:
+       schedule:
+         - cron: "0 3 * * *"  # daily at 03:00 UTC — remove to stop auto-run
+       workflow_dispatch:
+       push:
+         branches: [main]
+     jobs:
+       generate:
+         runs-on: ubuntu-latest
+         permissions:
+           contents: write
+         steps:
+           - uses: actions/checkout@v4
+           - name: Download Gitanimals SVG
+             run: |
+               mkdir -p assets
+               curl -sL "https://render.gitanimals.org/lines/[username]?with-cat=1&with-cat-ghost=1&with-little-chick=1" \
+                 -o assets/gitanimals-lines.svg
+           - name: Commit and Push
+             run: |
+               git config --global user.name "github-actions[bot]"
+               git config --global user.email "github-actions[bot]@users.noreply.github.com"
+               git add assets/gitanimals-lines.svg
+               git commit -m "chore: update gitanimals [skip ci]" || echo "No changes"
+               git push origin main
+             env:
+               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+     ```
+
+3. **To hide from README without deleting**:
+   - Wrap the `<a>...</a>` block with `<!--` and `-->` to comment it out.
+
+4. **To disable the workflow**:
+   - Change `on: schedule:` to `on: [workflow_dispatch]` (manual trigger only), or disable via GitHub UI: **Actions → select workflow → ⋯ → Disable workflow**.
+
 ## Commit Message Guidelines
 - Use `Update snake animation` for color or theme changes.
 - Use `Update profile design` for README or visual updates.
