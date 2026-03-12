@@ -17,8 +17,8 @@ name: Gitanimals Cat Update
 
 on:
   schedule:
-    - cron: "0 3 * * *" # Run daily 03:00 UTC — hapus/nonaktifkan baris ini untuk stop auto-run
-  workflow_dispatch: # trigger manual tetap tersedia
+    - cron: "0 3 * * *" # Run daily at 03:00 UTC — remove this line to stop auto-run
+  workflow_dispatch: # manual trigger always available
   push:
     branches:
       - main
@@ -37,7 +37,7 @@ jobs:
       - name: Download Gitanimals SVGs
         run: |
           mkdir -p assets
-          # Lines mode — kucing & hewan berjalan berdasarkan kontribusi
+          # Lines mode
           curl -sL "https://render.gitanimals.org/lines/arcxteam?with-cat=1&with-cat-ghost=1&with-little-chick=1&with-penguin=1&with-slime=1" \
             -o assets/gitanimals-lines.svg
           echo "=== Downloaded files ==="
