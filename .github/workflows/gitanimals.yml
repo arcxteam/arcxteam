@@ -1,0 +1,42 @@
+name: Gitanimals Cat Update
+
+on:
+  schedule:
+    - cron: "0 3 * * *" # Run daily at 03:00 UTC (offset from snake)
+  workflow_dispatch: # trigger manual
+  push:
+    branches:
+      - main
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Download Gitanimals SVGs
+        run: |
+          mkdir -p assets
+          # Lines mode — walking cats & animals based on contributions
+          curl -sL "https://render.gitanimals.org/lines/arcxteam" \
+            -o assets/gitanimals-lines.svg
+          # Farm mode — all collected companions displayed in habitat
+          curl -sL "https://render.gitanimals.org/farms/arcxteam" \
+            -o assets/gitanimals-farm.svg
+          echo "=== Downloaded files ==="
+          ls -lh assets/gitanimals-*.svg
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/gitanimals-lines.svg assets/gitanimals-farm.svg
+          git commit -m "chore: update gitanimals renders [skip ci]" || echo "No changes to commit"
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -8,7 +8,7 @@
 
 <!-- Tagline -->
 <p align="center">
-  <samp><em>❝ Web3 isn't just blockchain — it's you. ❞</em></samp>
+  <samp><em>❝ Permissionless by nature — the network is you. ❞</em></samp>
 </p>
 
 <!-- Visitor Counter -->
@@ -47,7 +47,7 @@
   <a href="https://discord.gg/7fSqPUdx" target="_blank">
     <img src="https://img.shields.io/badge/-%20-5865F2?style=for-the-badge&logo=discord&logoColor=white" title="Discord Community"/>
   </a>
-  <a href="https://facebook.com/greyscope" target="_blank">
+  <a href="https://www.facebook.com/profile.php?id=100022261658641" target="_blank">
     <img src="https://img.shields.io/badge/-%20-1877F2?style=for-the-badge&logo=facebook&logoColor=white" title="Facebook greyscope"/>
   </a>
   <a href="https://www.instagram.com/grey.scope/" target="_blank">
@@ -91,9 +91,14 @@
 
 ![Custom Snake GIF](https://raw.githubusercontent.com/arcxteam/arcxteam/main/assets/custom-snake.gif)
 
-<!-- Gitanimals pixel art based on contributions -->
+<!-- Gitanimals — walking animals (lines mode, live) -->
 <a href="https://gitanimals.org" target="_blank">
   <img src="https://render.gitanimals.org/lines/arcxteam" width="100%" />
+</a>
+
+<!-- Gitanimals — farm mode (cats & companions collected) -->
+<a href="https://gitanimals.org" target="_blank">
+  <img src="https://render.gitanimals.org/farms/arcxteam" width="100%" />
 </a>
 
 </div>
@@ -103,7 +108,7 @@
 <!-- Git Stats -->
 <div align="center">
 
-<h2><samp>📊 Git Stats</samp></h2>
+<h2><samp>Git Stats</samp></h2>
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=arcxteam&layout=compact&theme=dark&bg_color=0d1116&title_color=8A2BE2&text_color=fef000&icon_color=fef000&hide_border=true&card_width=495)
 
@@ -128,7 +133,7 @@
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
   <img src="https://img.shields.io/badge/Python-3775A9?style=for-the-badge&logo=python&logoColor=fef000" />
   <img src="https://img.shields.io/badge/Solidity-dcdcdc?style=for-the-badge&logo=solidity&logoColor=black" />
-  <img src="https://img.shields.io/badge/Astro-ff8c00?style=for-the-badge&logo=astro&logoColor=black" />
+  <img src="https://img.shields.io/badge/Web3.js-ff8c00?style=for-the-badge&logo=web3.js&logoColor=white" />
   <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
   <img src="https://img.shields.io/badge/Shell_Script-66ff00?style=for-the-badge&logo=gnu-bash&logoColor=black" />
   <img src="https://img.shields.io/badge/TypeScript-0049AB?style=for-the-badge&logo=typescript&logoColor=white" />
@@ -136,6 +141,16 @@
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
   <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=green" />
   <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
+  <img src="https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white" />
+  <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" />
+  <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" />
+  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white" />
+  <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" />
+  <img src="https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white" />
+  <img src="https://img.shields.io/badge/n8n-EA4B71?style=for-the-badge&logo=n8n&logoColor=white" />
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
 </p>
 
 </div>
