@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Greyscope&amp;Co — Web3 Growth Hacking Hub. Where innovation meets decentralized ecosystems. Node staking, AI/ML analytics, and community-powered discovery.">
+    <meta name="keywords" content="Web3, blockchain, DeFi, nodes, AI, growth hacking, community, discovery">
+    <meta name="theme-color" content="#000000">
+    <meta property="og:title" content="Greyscope&amp;Co — Web3 Growth Hacking Hub">
+    <meta property="og:description" content="Web3 isn't just about blockchain, it's about you.">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Greyscope&amp;Co — Web3 isn't just about blockchain, it's about you.</title>
+
+    <!-- Performance: preconnect — UX Architect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="/src/favicon.ico" rel="icon" type="image/x-icon">
+
+    <style>
+        /* ===================================================================
+           DESIGN TOKEN SYSTEM — UI Designer + UX Architect
+           All values drive from tokens: no magic numbers in components below
+           =================================================================== */
+        :root {
+            /* Brand: Peach primary + Purple-800 accent */
+            --color-brand:       #FFAE87;
+            --color-brand-dim:   rgba(255,174,135,0.13);
+            --color-brand-glow:  rgba(255,174,135,0.28);
+            --color-accent:      #7C3AED;
+            --color-accent-dim:  rgba(124,58,237,0.15);
+            /* Surface scale — dark theme default */
+            --color-bg:          #000000;
+            --color-surface:     #111111;
+            --color-surface-2:   #1a1a1a;
+            --color-surface-3:   #252525;
+            /* Borders */
+            --color-border:      rgba(124,58,237,0.2);
+            --color-border-h:    rgba(255,174,135,0.5);
+            /* Text */
+            --color-text-hi:     #f8fafc;
+            --color-text-md:     #94a3b8;
+            --color-text-lo:     #64748b;
+            --color-text-inv:    #000000;
+            /* Status */
+            --color-ok:   #10b981;
+            --color-err:  #ef4444;
+            /* Typography */
+            --font:        'Geist Mono', 'SF Mono', 'Fira Code', monospace;
+            --sz-xs:   0.75rem;   /* 12px */
+            --sz-sm:   0.875rem;  /* 14px */
+            --sz-base: 1rem;      /* 16px */
+            --sz-lg:   1.125rem;  /* 18px */
+            --sz-xl:   1.25rem;   /* 20px */
+            --sz-2xl:  1.5rem;    /* 24px */
+            --sz-3xl:  1.875rem;  /* 30px */
+            --sz-4xl:  2.25rem;   /* 36px */
+            --sz-hero: clamp(2.4rem, 5vw, 4.2rem);
+            /* Spacing */
+            --s1:0.25rem; --s2:0.5rem;  --s3:0.75rem; --s4:1rem;
+            --s5:1.25rem; --s6:1.5rem;  --s8:2rem;    --s10:2.5rem;
+            --s12:3rem;   --s16:4rem;   --s20:5rem;   --s24:6rem;
+            /* Radii */
+            --r-sm:8px; --r-md:12px; --r-lg:16px; --r-xl:24px; --r-full:9999px;
+            /* Shadows */
+            --sh-brand:    0 0 22px rgba(255,174,135,0.18);
+            --sh-brand-xl: 0 12px 40px rgba(255,174,135,0.25);
+            --sh-card:     0 4px 24px rgba(0,0,0,0.4);
+            /* Easing */
+            --ease-spring: cubic-bezier(0.34,1.56,0.64,1);
+            --ease-s:      cubic-bezier(0.4,0,0.2,1);
+            --dur-f: 150ms; --dur-b: 300ms; --dur-s: 500ms;
+            /* Layout */
+            --max-w: 1400px;
+            --nav-h: 70px;
+        }
+
+        /* ===================================================================
+           LIGHT THEME — UX Architect: include light/dark/system on ALL sites
+           =================================================================== */
+        [data-theme="light"] {
+            --color-bg:       #fafafa;
+            --color-surface:  #f1f5f9;
+            --color-surface-2:#e2e8f0;
+            --color-surface-3:#cbd5e1;
+            --color-border:   rgba(124,58,237,0.15);
+            --color-border-h: rgba(212,114,74,0.5);
+            --color-text-hi:  #0f172a;
+            --color-text-md:  #475569;
+            --color-text-lo:  #94a3b8;
+            --color-text-inv: #000000;
+            --color-brand:       #d4724a;
+            --color-brand-dim:   rgba(212,114,74,0.12);
+            --color-brand-glow:  rgba(212,114,74,0.25);
+            --color-accent:      #7C3AED;
+            --color-accent-dim:  rgba(124,58,237,0.1);
+            --sh-brand:    0 0 20px rgba(212,114,74,0.15);
+            --sh-brand-xl: 0 12px 40px rgba(212,114,74,0.2);
+            --sh-card:     0 4px 24px rgba(0,0,0,0.1);
+        }
+
+        /* ===================================================================
+           RESET & BASE
+           =================================================================== */
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+        /* Screen-reader skip link — Inclusive Visuals / WCAG 2.2 */
+        .skip-link {
+            position:absolute; top:-40px; left:var(--s4);
+            background:var(--color-brand); color:var(--color-text-inv);
+            padding:var(--s2) var(--s4); border-radius:var(--r-md);
+            font-size:var(--sz-sm); font-weight:700; z-index:9999;
+            text-decoration:none; transition:top var(--dur-f);
+        }
+        .skip-link:focus { top:var(--s4); }
+        .sr-only {
+            position:absolute; width:1px; height:1px; padding:0;
+            margin:-1px; overflow:hidden; clip:rect(0,0,0,0);
+            white-space:nowrap; border:0;
+        }
+
+        html { scroll-behavior:smooth; }
+
+        body {
+            font-family:var(--font);
+            background:var(--color-bg);
+            min-height:100vh;
+            overflow-x:hidden;
+            color:var(--color-text-hi);
+            position:relative;
+            transition: background var(--dur-s) var(--ease-s),
+                        color var(--dur-s) var(--ease-s);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width:5px; }
+        ::-webkit-scrollbar-track { background:var(--color-bg); }
+        ::-webkit-scrollbar-thumb { background:var(--color-brand-dim); border-radius:3px; }
+        ::-webkit-scrollbar-thumb:hover { background:var(--color-brand); }
+
+        /* WCAG AA focus ring */
+        :focus-visible {
+            outline:2px solid var(--color-brand);
+            outline-offset:3px;
+            border-radius:var(--r-sm);
+        }
+
+        /* Respect prefers-reduced-motion — Inclusive Visuals */
+        @media (prefers-reduced-motion:reduce) {
+            *, *::before, *::after {
+                animation-duration:0.01ms !important;
+                animation-iteration-count:1 !important;
+                transition-duration:0.01ms !important;
+            }
+        }
+
+        /* ===================================================================
+           ATMOSPHERIC LAYER
+           =================================================================== */
+        .noise-overlay {
+            position:fixed; inset:0;
+            background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.04"/></svg>');
+            pointer-events:none; z-index:1;
+        }
+        .floating-orbs { position:fixed; inset:0; pointer-events:none; z-index:0; overflow:hidden; }
+        .orb {
+            position:absolute; border-radius:50%;
+            background:radial-gradient(circle, var(--color-brand-dim) 0%, transparent 70%);
+            animation:float-orb 20s infinite linear;
+        }
+        .orb:nth-child(1){width:120px;height:120px;left:10%;animation-duration:22s}
+        .orb:nth-child(2){width:70px;height:70px;left:70%;animation-duration:18s;animation-delay:5s}
+        .orb:nth-child(3){width:90px;height:90px;left:50%;animation-duration:25s;animation-delay:10s}
+        .orb:nth-child(4){width:140px;height:140px;left:30%;animation-duration:20s;animation-delay:15s}
+        .orb:nth-child(5){width:55px;height:55px;left:85%;animation-duration:16s;animation-delay:8s}
+        @keyframes float-orb {
+            0%   { transform:translateY(100vh) rotate(0deg); opacity:0; }
+            10%  { opacity:1; }
+            90%  { opacity:0.6; }
+            100% { transform:translateY(-100px) rotate(360deg); opacity:0; }
+        }
+
+        /* ===================================================================
+           ANNOUNCEMENT BAR — Visual Storyteller: grab attention, set narrative
+           =================================================================== */
+        .announcement-bar {
+            background:linear-gradient(90deg, var(--color-bg) 0%, var(--color-surface-3) 50%, var(--color-bg) 100%);
+            color:var(--color-brand);
+            padding:var(--s3) 0;
+            text-align:center;
+            font-size:var(--sz-xs);
+            font-weight:500;
+            letter-spacing:0.5px;
+            position:relative;
+            overflow:hidden;
+            z-index:10;
+            border-bottom:1px solid var(--color-border);
+        }
+        .announcement-bar__shimmer {
+            position:absolute; inset:0;
+            background:linear-gradient(90deg, transparent, var(--color-brand-dim), transparent);
+            animation:shimmer 4s infinite;
+        }
+        .announcement-bar__text { position:relative; z-index:1; }
+        @keyframes shimmer {
+            0%  { transform:translateX(-100%); }
+            100%{ transform:translateX(100%); }
+        }
+
+        /* ===================================================================
+           NAVBAR — Brand Guardian + UX Architect
+           =================================================================== */
+        .navbar {
+            background:rgba(0,0,0,0.85);
+            backdrop-filter:blur(20px);
+            -webkit-backdrop-filter:blur(20px);
+            border-bottom:1px solid var(--color-border);
+            height:var(--nav-h);
+            position:sticky; top:0; z-index:100;
+            transition:border-color var(--dur-b) var(--ease-s);
+        }
+        [data-theme="light"] .navbar { background:rgba(250,250,250,0.9); }
+        .nav-container {
+            max-width:var(--max-w); margin:0 auto;
+            padding:0 var(--s8);
+            display:flex; justify-content:space-between; align-items:center;
+            height:100%;
+        }
+        .logo { display:flex; align-items:center; text-decoration:none; transition:opacity var(--dur-f); }
+        .logo:hover { opacity:0.82; }
+        .logo__img { height:46px; width:auto; transition:transform var(--dur-b) var(--ease-spring); }
+        .logo:hover .logo__img { transform:scale(1.04); }
+        .nav-links {
+            display:flex; gap:var(--s8);
+            list-style:none; align-items:center;
+        }
+        .nav-links a {
+            color:var(--color-text-md);
+            text-decoration:none;
+            font-weight:500;
+            font-size:var(--sz-sm);
+            letter-spacing:0.3px;
+            transition:color var(--dur-f) var(--ease-s);
+            position:relative; padding-bottom:2px;
+        }
+        .nav-links a::after {
+            content:''; position:absolute; bottom:-4px; left:0;
+            width:0; height:2px;
+            background:var(--color-brand);
+            transition:width var(--dur-b) var(--ease-s);
+            border-radius:1px;
+        }
+        .nav-links a:hover { color:var(--color-text-hi); }
+        .nav-links a:hover::after { width:100%; }
+        .nav-right { display:flex; align-items:center; gap:var(--s4); }
+
+        /* ===================================================================
+           THEME TOGGLE — UX Architect: CRITICAL — include on ALL new sites
+           =================================================================== */
+        .theme-toggle {
+            display:flex; align-items:center;
+            background:var(--color-surface);
+            border:1px solid var(--color-border);
+            border-radius:var(--r-full);
+            padding:3px; gap:2px;
+        }
+        .theme-btn {
+            display:flex; align-items:center; justify-content:center;
+            width:28px; height:28px; border-radius:50%;
+            background:none; border:none; cursor:pointer;
+            color:var(--color-text-lo); font-size:12px;
+            transition:all var(--dur-f) var(--ease-s);
+            font-family:var(--font);
+        }
+        .theme-btn:hover { color:var(--color-text-hi); }
+        .theme-btn.active { background:var(--color-brand); color:var(--color-text-inv); }
+
+        /* Mobile hamburger */
+        .hamburger {
+            display:none; background:none;
+            border:1px solid var(--color-border);
+            color:var(--color-brand);
+            font-size:1.1rem; cursor:pointer;
+            padding:var(--s2) var(--s3);
+            border-radius:var(--r-md);
+            transition:all var(--dur-f); z-index:101;
+            font-family:var(--font);
+        }
+        .hamburger:hover { background:var(--color-brand-dim); }
+        .nav-overlay {
+            display:none; position:fixed; inset:0;
+            background:rgba(0,0,0,0.6); z-index:99;
+            backdrop-filter:blur(4px);
+        }
+        .nav-overlay.active { display:block; }
+
+        /* ===================================================================
+           HERO — Visual Storyteller: Problem→Solution→Action narrative arc
+           =================================================================== */
+        .hero-section {
+            min-height:calc(100vh - var(--nav-h) - 40px);
+            display:flex; align-items:center;
+            position:relative; z-index:2;
+            padding:var(--s8) 0;
+            overflow:hidden;
+        }
+        .hero-spline {
+            position:absolute;
+            top:0; left:0; width:100%; height:100%;
+            z-index:0; pointer-events:none; border:none; display:block;
+        }
+        .hero-container {
+            max-width:var(--max-w); margin:0 auto;
+            padding:0 var(--s8);
+            display:grid;
+            grid-template-columns:1fr 420px;
+            gap:var(--s24);
+            align-items:center;
+            position:relative; z-index:1;
+        }
+        /* Status badge — Brand Guardian brand voice */
+        .hero-badge {
+            display:inline-flex; align-items:center; gap:var(--s2);
+            background:var(--color-accent-dim);
+            border:1px solid rgba(124,58,237,0.35);
+            border-radius:var(--r-full);
+            padding:var(--s2) var(--s4);
+            font-size:var(--sz-xs); font-weight:700;
+            color:var(--color-brand);
+            letter-spacing:1px; text-transform:uppercase;
+            margin-bottom:var(--s6);
+        }
+        .hero-badge__dot {
+            width:6px; height:6px;
+            background:var(--color-brand); border-radius:50%;
+            animation:pulse-dot 2s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+            0%,100% { transform:scale(1); opacity:1; }
+            50%     { transform:scale(1.5); opacity:0.6; }
+        }
+        .hero-title {
+            font-size:var(--sz-hero);
+            font-weight:300;
+            color:var(--color-text-hi);
+            line-height:1.1;
+            margin-bottom:var(--s6);
+            letter-spacing:-2px;
+        }
+        .hero-title .highlight {
+            background:linear-gradient(135deg, var(--color-brand) 0%, #ffd4b8 60%, #c084fc 100%);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            background-clip:text;
+            font-weight:700;
+        }
+        .hero-description {
+            font-size:var(--sz-base);
+            color:var(--color-text-md);
+            line-height:1.75;
+            margin-bottom:var(--s8);
+            max-width:580px;
+        }
+
+        /* Icon grid — UI Designer component system */
+        .icon-grid {
+            display:grid;
+            grid-template-columns:repeat(5,1fr);
+            gap:var(--s4);
+            margin:var(--s8) 0;
+            max-width:720px;
+        }
+        .icon-item {
+            background:var(--color-surface);
+            border-radius:var(--r-lg);
+            padding:var(--s5) var(--s3);
+            border:1px solid var(--color-border);
+            transition:
+                transform var(--dur-b) var(--ease-spring),
+                border-color var(--dur-b) var(--ease-s),
+                box-shadow var(--dur-b) var(--ease-s),
+                background var(--dur-b) var(--ease-s);
+            display:flex; flex-direction:column;
+            align-items:center; justify-content:center;
+            gap:var(--s3);
+            backdrop-filter:blur(10px);
+            position:relative; overflow:hidden;
+            cursor:default;
+        }
+        .icon-item::before {
+            content:''; position:absolute;
+            top:0; left:0; width:100%; height:2px;
+            background:linear-gradient(90deg, var(--color-accent), var(--color-brand));
+            transform:scaleX(0);
+            transition:transform var(--dur-b) var(--ease-s);
+        }
+        .icon-item:hover { transform:translateY(-6px) scale(1.02); border-color:var(--color-border-h); box-shadow:var(--sh-brand); background:var(--color-surface-2); }
+        .icon-item:hover::before { transform:scaleX(1); }
+        .icon-item i { font-size:2rem; color:var(--color-brand); }
+        .icon-label { font-size:var(--sz-xs); text-transform:uppercase; letter-spacing:1.5px; color:var(--color-brand); font-weight:600; text-align:center; }
+
+        /* Callout — Brand Guardian brand voice left border accent */
+        .hero-callout {
+            background:var(--color-surface);
+            border:1px solid var(--color-border);
+            border-left:3px solid var(--color-brand);
+            border-radius:var(--r-lg);
+            padding:var(--s4) var(--s5);
+            font-size:var(--sz-sm);
+            color:var(--color-text-md);
+            line-height:1.75;
+            max-width:600px;
+        }
+        .hero-callout strong { color:var(--color-brand); font-weight:700; }
+
+        /* ===================================================================
+           LAUNCH CARD — Whimsy Injector + UI Designer
+           =================================================================== */
+        .launch-card {
+            background:var(--color-surface);
+            backdrop-filter:blur(30px);
+            -webkit-backdrop-filter:blur(30px);
+            border:1px solid var(--color-border);
+            border-radius:var(--r-xl);
+            padding:var(--s8);
+            position:relative; overflow:hidden;
+            box-shadow:var(--sh-card);
+            transition:box-shadow var(--dur-s) var(--ease-s);
+        }
+        .launch-card:hover { box-shadow:var(--sh-brand-xl); }
+        /* Animated top bar — Whimsy Injector subtle personality */
+        .launch-card__bar {
+            position:absolute; top:0; left:0; right:0; height:3px;
+            background:linear-gradient(90deg, var(--color-accent), var(--color-brand), #ffd4b8, var(--color-accent));
+            background-size:200% 100%;
+            animation:bar-shimmer 3s ease-in-out infinite;
+        }
+        @keyframes bar-shimmer {
+            0%  { background-position:-200% 0; }
+            100%{ background-position:200% 0; }
+        }
+        /* Live indicator dot */
+        .launch-card__live {
+            position:absolute; top:var(--s4); right:var(--s4);
+            width:8px; height:8px;
+            border-radius:50%; background:var(--color-brand);
+            animation:blink 2s ease-in-out infinite;
+        }
+        @keyframes blink {
+            0%,100%{ opacity:1; transform:scale(1); }
+            50%    { opacity:0.4; transform:scale(0.8); }
+        }
+        /* Glitch title — Brand Guardian: distinctive visual identity */
+        .glitch-wrap { text-align:center; margin-bottom:var(--s2); }
+        .launch-title {
+            font-size:var(--sz-4xl);
+            font-weight:700;
+            color:var(--color-text-hi);
+            letter-spacing:-1px;
+            display:inline-block;
+        }
+        .glitch-text { position:relative; display:inline-block; }
+        .glitch-text::before,
+        .glitch-text::after {
+            content:attr(data-text);
+            position:absolute; inset:0;
+        }
+        .glitch-text::before {
+            animation:glitch-1 3s infinite;
+            color:var(--color-brand);
+            clip-path:polygon(0 0, 100% 0, 100% 45%, 0 45%);
+            z-index:-1;
+        }
+        .glitch-text::after {
+            animation:glitch-2 3s infinite;
+            color:#a855f7;
+            clip-path:polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+            z-index:-2;
+            mix-blend-mode:screen;
+        }
+        @keyframes glitch-1 {
+            0%,14%,15%,49%,50%,99%,100%{ transform:translate3d(0,0,0); opacity:0; }
+            1%,13%   { transform:translate3d(-3px,0,0); opacity:0.7; }
+            16%,48%  { transform:translate3d(2px,0,0); opacity:0.7; }
+        }
+        @keyframes glitch-2 {
+            0%,20%,21%,62%,63%,100%{ transform:translate3d(0,0,0); opacity:0; }
+            21%,61%  { transform:translate3d(-2px,0,0); opacity:0.5; }
+        }
+        .launch-sub {
+            font-size:var(--sz-sm); color:var(--color-text-md);
+            text-align:center; margin-bottom:var(--s8);
+            display:flex; align-items:center; justify-content:center;
+            gap:var(--s2);
+        }
+        .launch-sub::before,.launch-sub::after { content:'—'; color:var(--color-brand-dim); }
+
+        /* Countdown */
+        .countdown-container {
+            display:grid; grid-template-columns:repeat(4,1fr);
+            gap:var(--s3); margin-bottom:var(--s8);
+        }
+        .countdown-item {
+            text-align:center;
+            background:var(--color-surface-2);
+            padding:var(--s5) var(--s2);
+            border-radius:var(--r-lg);
+            border:1px solid var(--color-border);
+            position:relative; overflow:hidden;
+            transition:border-color var(--dur-b);
+        }
+        .countdown-item:hover { border-color:var(--color-brand); }
+        .countdown-item__ring {
+            position:absolute; inset:0;
+            background:conic-gradient(transparent 270deg, var(--color-brand-dim) 360deg);
+            animation:ring-spin 6s linear infinite;
+            opacity:0.3;
+        }
+        @keyframes ring-spin {
+            0%  { transform:rotate(0deg); }
+            100%{ transform:rotate(360deg); }
+        }
+        .countdown-content { position:relative; z-index:1; }
+        .countdown-number {
+            font-size:var(--sz-4xl); font-weight:800;
+            color:var(--color-brand); display:block;
+            line-height:1; margin-bottom:var(--s2);
+            font-variant-numeric:tabular-nums;
+        }
+        .countdown-label {
+            font-size:var(--sz-xs); color:var(--color-text-md);
+            font-weight:500; text-transform:uppercase; letter-spacing:1px;
+        }
+
+        /* Subscribe form */
+        .subscribe-section { border-top:1px solid var(--color-border); padding-top:var(--s6); }
+        .subscribe-title { font-size:var(--sz-base); font-weight:600; color:var(--color-text-hi); margin-bottom:var(--s4); text-align:center; }
+        .subscribe-form { display:flex; gap:var(--s3); margin-bottom:var(--s3); }
+        .email-input {
+            flex:1; padding:var(--s3) var(--s4);
+            border:1px solid var(--color-border);
+            border-radius:var(--r-md);
+            background:var(--color-surface-2);
+            font-size:var(--sz-sm); color:var(--color-text-hi);
+            font-family:var(--font);
+            transition:all var(--dur-f);
+        }
+        .email-input::placeholder { color:var(--color-text-lo); }
+        .email-input:focus { outline:none; border-color:var(--color-brand); box-shadow:0 0 0 3px var(--color-brand-dim); }
+        .email-input.error { border-color:var(--color-err); box-shadow:0 0 0 3px rgba(239,68,68,0.1); }
+        .subscribe-btn {
+            background:var(--color-brand); color:var(--color-text-inv);
+            border:none; padding:var(--s3) var(--s5);
+            border-radius:var(--r-md);
+            font-size:var(--sz-sm); font-weight:700;
+            cursor:pointer;
+            transition:all var(--dur-b) var(--ease-spring);
+            font-family:var(--font);
+            position:relative; overflow:hidden;
+            white-space:nowrap; letter-spacing:0.3px;
+        }
+        .subscribe-btn::before {
+            content:''; position:absolute;
+            top:0; left:-100%;
+            width:100%; height:100%;
+            background:linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+            transition:left var(--dur-s);
+        }
+        .subscribe-btn:hover::before { left:100%; }
+        .subscribe-btn:hover { transform:translateY(-2px); box-shadow:var(--sh-brand-xl); }
+        .subscribe-btn:active { transform:translateY(0); }
+        .subscribe-btn.success { background:var(--color-ok); }
+        .subscribe-note { text-align:center; font-size:var(--sz-xs); color:var(--color-text-lo); }
+
+        /* ===================================================================
+           STATS STRIP — Visual Storyteller: social proof, trust signals
+           =================================================================== */
+        .stats-section {
+            position:relative; z-index:2;
+            padding:var(--s12) 0;
+            background:var(--color-surface);
+            border-top:1px solid var(--color-border);
+            border-bottom:1px solid var(--color-border);
+        }
+        .stats-container {
+            max-width:var(--max-w); margin:0 auto;
+            padding:0 var(--s8);
+            display:grid; grid-template-columns:repeat(4,1fr);
+            gap:var(--s8); text-align:center;
+        }
+        .stat-item { padding:var(--s4); }
+        .stat-number {
+            font-size:var(--sz-4xl); font-weight:800;
+            color:var(--color-brand); letter-spacing:-2px;
+            display:block; margin-bottom:var(--s2);
+        }
+        .stat-label { font-size:var(--sz-sm); color:var(--color-text-md); text-transform:uppercase; letter-spacing:1px; }
+
+        /* ===================================================================
+           FEATURES SECTION — Brand Guardian + Visual Storyteller
+           What we build: complete stack narrative
+           =================================================================== */
+        .features-section {
+            position:relative; z-index:2;
+            padding:var(--s20) 0;
+            border-top:1px solid var(--color-border);
+        }
+        .features-container { max-width:var(--max-w); margin:0 auto; padding:0 var(--s8); }
+        .section-header { text-align:center; margin-bottom:var(--s16); }
+        .section-label {
+            display:inline-block;
+            font-size:var(--sz-xs); font-weight:700;
+            color:var(--color-brand); text-transform:uppercase;
+            letter-spacing:2px; margin-bottom:var(--s3);
+        }
+        .section-title {
+            font-size:var(--sz-4xl); font-weight:300;
+            color:var(--color-text-hi); letter-spacing:-1.5px; line-height:1.2;
+        }
+        .section-title strong { color:var(--color-brand); font-weight:700; }
+        .section-sub {
+            font-size:var(--sz-base); color:var(--color-text-md);
+            margin-top:var(--s4); max-width:520px;
+            margin-left:auto; margin-right:auto; line-height:1.75;
+        }
+        .features-grid {
+            display:grid; grid-template-columns:repeat(3,1fr);
+            gap:var(--s6);
+        }
+        .feature-card {
+            background:var(--color-surface);
+            border:1px solid var(--color-border);
+            border-radius:var(--r-xl);
+            padding:var(--s8);
+            position:relative; overflow:hidden;
+            transition:all var(--dur-b) var(--ease-s);
+        }
+        .feature-card::before {
+            content:''; position:absolute;
+            top:0; left:0; right:0; height:1px;
+            background:linear-gradient(90deg, transparent, var(--color-accent), var(--color-brand), transparent);
+            opacity:0; transition:opacity var(--dur-b);
+        }
+        .feature-card:hover { border-color:var(--color-border-h); transform:translateY(-4px); box-shadow:var(--sh-brand); }
+        .feature-card:hover::before { opacity:1; }
+        .feature-icon {
+            width:52px; height:52px;
+            background:var(--color-accent-dim);
+            border-radius:var(--r-lg);
+            display:flex; align-items:center; justify-content:center;
+            font-size:1.4rem; color:var(--color-brand);
+            margin-bottom:var(--s5);
+            transition:transform var(--dur-b) var(--ease-spring);
+        }
+        .feature-card:hover .feature-icon { transform:scale(1.1) rotate(-5deg); }
+        .feature-name { font-size:var(--sz-lg); font-weight:700; color:var(--color-text-hi); margin-bottom:var(--s3); letter-spacing:-0.5px; }
+        .feature-desc { font-size:var(--sz-sm); color:var(--color-text-md); line-height:1.75; }
+        .feature-tag {
+            display:inline-flex; align-items:center; gap:var(--s1);
+            background:var(--color-accent-dim);
+            border:1px solid rgba(124,58,237,0.3);
+            border-radius:var(--r-full);
+            padding:var(--s1) var(--s3);
+            font-size:var(--sz-xs); color:var(--color-brand);
+            font-weight:600; margin-top:var(--s5); letter-spacing:0.5px;
+        }
+
+        /* ===================================================================
+           SOCIAL + FOOTER — Brand Guardian
+           =================================================================== */
+        .social-section {
+            position:relative; z-index:2;
+            padding:var(--s12) 0 var(--s8); text-align:center;
+        }
+        .social-label { font-size:var(--sz-xs); color:var(--color-text-lo); text-transform:uppercase; letter-spacing:2px; margin-bottom:var(--s5); }
+        .social-media { display:flex; justify-content:center; gap:var(--s4); flex-wrap:wrap; }
+        .social-icon {
+            display:flex; align-items:center; justify-content:center;
+            width:48px; height:48px; border-radius:50%;
+            background:var(--color-surface);
+            color:var(--color-text-md);
+            font-size:1.1rem;
+            transition:all var(--dur-b) var(--ease-spring);
+            text-decoration:none;
+            border:1px solid var(--color-border);
+        }
+        .social-icon:hover { background:var(--color-brand); color:var(--color-text-inv); transform:translateY(-4px) scale(1.05); box-shadow:var(--sh-brand); border-color:var(--color-brand); }
+        .footer {
+            position:relative; z-index:2;
+            text-align:center;
+            padding:var(--s6) var(--s8);
+            border-top:1px solid var(--color-border);
+            color:var(--color-text-lo);
+            font-size:var(--sz-xs);
+        }
+        .footer__inner {
+            max-width:var(--max-w); margin:0 auto;
+            display:flex; flex-direction:column; align-items:center;
+            justify-content:center; gap:var(--s3); text-align:center;
+        }
+        .footer__brand { color:var(--color-brand); font-weight:600; }
+        .footer__links { display:flex; gap:var(--s5); list-style:none; }
+        .footer__links a { color:var(--color-text-lo); text-decoration:none; transition:color var(--dur-f); }
+        .footer__links a:hover { color:var(--color-brand); }
+
+        /* ===================================================================
+           SCROLL REVEAL UTILITY — Whimsy Injector: entrance delight
+           =================================================================== */
+        .reveal {
+            opacity:0;
+            transform:translateY(24px);
+            transition:
+                opacity var(--dur-s) var(--ease-s),
+                transform var(--dur-s) var(--ease-s);
+        }
+        .reveal.visible { opacity:1; transform:translateY(0); }
+        .reveal-d1 { transition-delay:100ms; }
+        .reveal-d2 { transition-delay:200ms; }
+        .reveal-d3 { transition-delay:300ms; }
+        .reveal-d4 { transition-delay:400ms; }
+
+        /* ===================================================================
+           RESPONSIVE — UX Architect: mobile-first breakpoints
+           =================================================================== */
+        @media (max-width:1024px) {
+            .hero-container {
+                grid-template-columns:1fr;
+                gap:var(--s12);
+                text-align:center;
+            }
+            .hero-description, .hero-callout { max-width:100%; }
+            .icon-grid { max-width:100%; margin:var(--s6) auto; }
+            .launch-card { max-width:500px; margin:0 auto; }
+            .features-grid { grid-template-columns:repeat(2,1fr); }
+            .stats-container { grid-template-columns:repeat(2,1fr); }
+        }
+        @media (max-width:768px) {
+            :root { --nav-h:64px; }
+            .hero-title { letter-spacing:-1px; }
+            .countdown-container { grid-template-columns:repeat(2,1fr); }
+            .icon-grid { grid-template-columns:repeat(3,1fr); }
+            .nav-links {
+                display:none;
+                position:fixed; top:0; right:-100%;
+                height:100vh; width:min(75%,320px);
+                background:var(--color-bg);
+                backdrop-filter:blur(20px);
+                flex-direction:column; justify-content:center; align-items:center;
+                transition:right var(--dur-b) var(--ease-s);
+                z-index:100; border-left:1px solid var(--color-border);
+                gap:var(--s8); padding-top:var(--nav-h);
+            }
+            .nav-links.active { display:flex; right:0; }
+            .nav-links a { font-size:var(--sz-lg); }
+            .hamburger { display:flex; align-items:center; justify-content:center; }
+            .subscribe-form { flex-direction:column; }
+            .features-grid { grid-template-columns:1fr; }
+            .footer__inner { justify-content:center; text-align:center; }
+            .footer__links { justify-content:center; }
+        }
+        @media (max-width:480px) {
+            .hero-container, .features-container { padding:0 var(--s4); }
+            .countdown-number { font-size:var(--sz-3xl); }
+            .icon-grid { grid-template-columns:repeat(2,1fr); }
+            .social-media { gap:var(--s3); }
+            .stats-container { grid-template-columns:repeat(2,1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Skip navigation — Inclusive Visuals / WCAG 2.2 -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- Atmospheric layer (decorative) -->
+<div class="noise-overlay" aria-hidden="true"></div>
+<div class="floating-orbs" aria-hidden="true">
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+</div>
+
+<!-- Announcement Bar — Visual Storyteller: set the hook -->
+<div class="announcement-bar" role="banner" aria-label="Site announcement">
+    <span class="announcement-bar__shimmer" aria-hidden="true"></span>
+    <span class="announcement-bar__text">
+        🚀 Brand portal launching soon — <strong>Join the waitlist</strong> for early Web3 discovery access!
+    </span>
+</div>
+
+<!-- Navbar — Brand Guardian: consistent brand identity -->
+<header>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="#" class="logo" aria-label="Greyscope&amp;Co — Home">
+                <img src="src/logo-yellow-white.png" alt="Greyscope&amp;Co" class="logo__img">
+            </a>
+
+            <button class="hamburger" id="hamburger"
+                aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <ul class="nav-links" id="nav-links" role="list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#web3">Web3-Hub</a></li>
+                <li><a href="#docsguides">Portal Guides</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+
+            <!-- Theme Toggle — UX Architect critical requirement -->
+            <div class="nav-right">
+                <div class="theme-toggle" role="group" aria-label="Color theme">
+                    <button class="theme-btn active" data-theme-target="dark"
+                        aria-label="Dark mode" aria-pressed="true" title="Dark mode">
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                    </button>
+                    <button class="theme-btn" data-theme-target="system"
+                        aria-label="Use system theme" aria-pressed="false" title="System theme">
+                        <i class="fas fa-circle-half-stroke" aria-hidden="true"></i>
+                    </button>
+                    <button class="theme-btn" data-theme-target="light"
+                        aria-label="Light mode" aria-pressed="false" title="Light mode">
+                        <i class="fas fa-sun" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+</header>
+
+<main id="main-content">
+
+    <!-- ================================================================
+         HERO — Visual Storyteller narrative arc:
+         Setup (Web3 problem) → Conflict (need discovery) → Resolution (Greyscope)
+         ================================================================ -->
+    <section class="hero-section" id="home" aria-labelledby="hero-heading">
+        <!-- Spline 3D background — decorative -->
+        <iframe class="hero-spline"
+            src="https://my.spline.design/threadsfeatureheaderanimationcopy-87fc91904ddb7e9c125a4e1a12f6de34/"
+            frameborder="0" allowfullscreen
+            aria-hidden="true" title="Decorative 3D animation">
+        </iframe>
+
+        <div class="hero-container">
+
+            <!-- Left: narrative content -->
+            <div class="hero-content">
+                <div class="hero-badge reveal">
+                    <span class="hero-badge__dot" aria-hidden="true"></span>
+                    Web3 isn't just blockchain — it's you.
+                </div>
+
+                <h1 class="hero-title reveal reveal-d1" id="hero-heading">
+                    Forge <span class="highlight">deeper</span><br>
+                    into Web3 <span class="highlight">growth</span><br>
+                    &amp; <span class="highlight">discovery</span>
+                    Hub<br>
+                </h1>
+
+                <p class="hero-description reveal reveal-d2">
+                    Greyscope&amp;Co is where <strong>agentic AI</strong> meets decentralized ecosystems.
+                    We bridge node-stake infrastructure, autonomous AI agents, and community-powered
+                    hackathon discovery — unlocking the next frontier of Web3 for builders,
+                    hackers, and explorers alike.
+                </p>
+
+                <!-- Icon grid — UI Designer component library -->
+                <div class="icon-grid reveal reveal-d3" role="list" aria-label="Core capabilities">
+                    <div class="icon-item" role="listitem">
+                        <i class="fab fa-ethereum" aria-hidden="true"></i>
+                        <span class="icon-label">Web3</span>
+                    </div>
+                    <div class="icon-item" role="listitem">
+                        <i class="fa-solid fa-hexagon-nodes" aria-hidden="true"></i>
+                        <span class="icon-label">DevOps</span>
+                    </div>
+                    <div class="icon-item" role="listitem">
+                        <i class="fa-solid fa-binoculars" aria-hidden="true"></i>
+                        <span class="icon-label">Discovery</span>
+                    </div>
+                    <div class="icon-item" role="listitem">
+                        <i class="fa-solid fa-brain" aria-hidden="true"></i>
+                        <span class="icon-label">AI/ML</span>
+                    </div>
+                    <div class="icon-item" role="listitem">
+                        <i class="fa-solid fa-user-astronaut" aria-hidden="true"></i>
+                        <span class="icon-label">Community</span>
+                    </div>
+                </div>
+
+                <div class="hero-callout reveal reveal-d4">
+                    <strong>Why join now?</strong> As a Growth Hacking Hub, we empower projects to scale
+                    strategically, leveraging data-driven insights and early-stage discovery. From devnet
+                    prototype to mainnet production, we bridge the gap between vision and execution —
+                    optimized for impact at every step.
+                </div>
+            </div>
+
+            <!-- Right: Launch card — Whimsy Injector -->
+            <div class="launch-card reveal reveal-d1" aria-labelledby="launch-title">
+                <div class="launch-card__bar" aria-hidden="true"></div>
+                <div class="launch-card__live" aria-hidden="true"></div>
+
+                <div class="glitch-wrap">
+                    <h2 class="launch-title" id="launch-title">
+                        <span class="glitch-text" data-text="Under BuidL">Under BuidL</span>
+                    </h2>
+                </div>
+                <p class="launch-sub">Coming Soon</p>
+
+                <div class="countdown-container" aria-label="Launch countdown timer">
+                    <div class="countdown-item">
+                        <div class="countdown-item__ring" aria-hidden="true"></div>
+                        <div class="countdown-content">
+                            <span class="countdown-number" id="days">00</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-item__ring" aria-hidden="true"></div>
+                        <div class="countdown-content">
+                            <span class="countdown-number" id="hours">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-item__ring" aria-hidden="true"></div>
+                        <div class="countdown-content">
+                            <span class="countdown-number" id="minutes">00</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-item__ring" aria-hidden="true"></div>
+                        <div class="countdown-content">
+                            <span class="countdown-number" id="seconds">00</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subscribe-section">
+                    <h3 class="subscribe-title">Get Launch Reminder</h3>
+                    <div class="subscribe-form" role="form" aria-label="Email subscription form">
+                        <label for="emailInput" class="sr-only">Email address</label>
+                        <input type="email" id="emailInput" class="email-input"
+                            placeholder="your@email.com"
+                            autocomplete="email"
+                            aria-required="true"
+                            aria-describedby="subscribe-note">
+                        <button class="subscribe-btn" id="subscribeBtn" type="button">
+                            Notified
+                        </button>
+                    </div>
+                    <p class="subscribe-note" id="subscribe-note">
+                        🎁 Early subscribers get priority access at launch
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Stats Strip — Visual Storyteller: trust signals, social proof -->
+    <section class="stats-section" aria-label="Statistics">
+        <div class="stats-container">
+            <div class="stat-item reveal">
+                <span class="stat-number">90+</span>
+                <span class="stat-label">Days to Launch</span>
+            </div>
+            <div class="stat-item reveal reveal-d1">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Core Pillars</span>
+            </div>
+            <div class="stat-item reveal reveal-d2">
+                <span class="stat-number">∞</span>
+                <span class="stat-label">Opportunities</span>
+            </div>
+            <div class="stat-item reveal reveal-d3">
+                <span class="stat-number">Web3</span>
+                <span class="stat-label">First Approach</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features — Brand Guardian + Visual Storyteller: complete stack narrative -->
+    <section class="features-section" id="web3" aria-labelledby="features-heading">
+        <div class="features-container">
+            <header class="section-header reveal">
+                <span class="section-label">What we build</span>
+                <h2 class="section-title" id="features-heading">
+                    The <strong>complete stack</strong><br>for Web3 growth
+                </h2>
+                <p class="section-sub">
+                    From infrastructure to intelligence — every layer of your Web3 journey, covered.
+                </p>
+            </header>
+
+            <div class="features-grid">
+                <article class="feature-card reveal">
+                    <div class="feature-icon" aria-hidden="true">
+                        <i class="fa-solid fa-hexagon-nodes"></i>
+                    </div>
+                    <h3 class="feature-name">Node Infrastructure</h3>
+                    <p class="feature-desc">
+                        DevOps-grade node management for Web3. Deploy validator and full nodes
+                        with automated pipelines, real-time health monitoring, and self-healing
+                        infrastructure — from devnet to mainnet, optimized for uptime,
+                        security, and maximum yield.
+                    </p>
+                    <span class="feature-tag">
+                        <i class="fas fa-circle" style="font-size:5px" aria-hidden="true"></i>
+                        DevOps · Node-Stake-Secure
+                    </span>
+                </article>
+
+                <article class="feature-card reveal reveal-d1">
+                    <div class="feature-icon" aria-hidden="true">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="feature-name">Agentic AI / ML</h3>
+                    <p class="feature-desc">
+                        Harness agentic AI and autonomous agents to decode on-chain signals, forecast
+                        market dynamics, and surface community sentiment — before the crowd.
+                        Self-learning AI that adapts and acts across Web3 ecosystems in real time.
+                    </p>
+                    <span class="feature-tag">
+                        <i class="fas fa-circle" style="font-size:5px" aria-hidden="true"></i>
+                        Intelligence Layer
+                    </span>
+                </article>
+
+                <article class="feature-card reveal reveal-d2">
+                    <div class="feature-icon" aria-hidden="true">
+                        <i class="fa-solid fa-binoculars"></i>
+                    </div>
+                    <h3 class="feature-name">Discovery Gateway</h3>
+                    <p class="feature-desc">
+                        The definitive research portal for Web3 hunters and builders. Discover
+                        hackathons, evaluate emerging protocols, and engage with the next wave of
+                        AI-robotics, DePIN, and autonomous infrastructure innovations.
+                    </p>
+                    <span class="feature-tag">
+                        <i class="fas fa-circle" style="font-size:5px" aria-hidden="true"></i>
+                        Alpha Discovery
+                    </span>
+                </article>
+
+                <article class="feature-card reveal reveal-d1">
+                    <div class="feature-icon" aria-hidden="true">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="feature-name">Growth Hacking</h3>
+                    <p class="feature-desc">
+                        Battle-tested growth playbooks for Web3 — hackathon campaigns, autonomous
+                        AI-powered outreach, viral community mechanics, and robotics-grade retention
+                        loops. Go from zero traction to mainnet launch.
+                    </p>
+                    <span class="feature-tag">
+                        <i class="fas fa-circle" style="font-size:5px" aria-hidden="true"></i>
+                        Growth Engine
+                    </span>
+                </article>
+
+                <article class="feature-card reveal reveal-d2">
+                    <div class="feature-icon" aria-hidden="true">
+                        <i class="fa-solid fa-user-astronaut"></i>
+                    </div>
+                    <h3 class="feature-name">Community Hub</h3>
+                    <p class="feature-desc">
+                        A vibrant, curated community of builders, stakers, and Web3 explorers.
+                        Collaborate, contribute, and co-create the decentralized future.
+                    </p>
+                    <span class="feature-tag">
+                        <i class="fas fa-circle" style="font-size:5px" aria-hidden="true"></i>
+                        Community-Powered
+                    </span>
+                </article>
+
+                <article class="feature-card reveal reveal-d3">
+                    <div class="feature-icon" aria-hidden="true">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="feature-name">Portal Guides</h3>
+                    <p class="feature-desc">
+                        Comprehensive guides, tutorials, and playbooks for every stage of
+                        your Web3 journey. From wallet setup to advanced DeFi strategies.
+                    </p>
+                    <span class="feature-tag">
+                        <i class="fas fa-circle" style="font-size:5px" aria-hidden="true"></i>
+                        Knowledge Base
+                    </span>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Section — Brand Guardian: cross-platform presence -->
+    <section class="social-section" aria-labelledby="social-label">
+        <p class="social-label" id="social-label">Find us on</p>
+        <div class="social-media" role="list">
+            <a href="https://github.com/arcxteam" class="social-icon" role="listitem" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
+            <a href="https://twitter.com/gr3yscope" class="social-icon" role="listitem" aria-label="Twitter / X" title="Twitter / X" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.instagram.com/grey.scope/" class="social-icon" role="listitem" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://linkedin.com/in/94n1" class="social-icon" role="listitem" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+            <a href="https://discord.gg/7fSqPUdx" class="social-icon" role="listitem" aria-label="Discord" title="Discord" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-discord" aria-hidden="true"></i>
+            </a>
+            <a href="https://t.me/gr3y0x" class="social-icon" role="listitem" aria-label="Telegram" title="Telegram" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-telegram" aria-hidden="true"></i>
+            </a>
+            <a href="https://youtube.com/@itsgani" class="social-icon" role="listitem" aria-label="YouTube" title="YouTube" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-youtube" aria-hidden="true"></i>
+            </a>
+            <a href="https://medium.com/@94n1" class="social-icon" role="listitem" aria-label="Medium" title="Medium" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-medium-m" aria-hidden="true"></i>
+            </a>
+            <a href="mailto:team@greyscope.xyz" class="social-icon" role="listitem" aria-label="Email" title="Email">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+            </a>
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer — Brand Guardian: brand consistency across all touchpoints -->
+<footer class="footer">
+    <div class="footer__inner">
+        <span>© 2026 <span class="footer__brand">Greyscope&amp;Co</span>. All rights reserved.</span>
+        <ul class="footer__links">
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script>
+    /* ================================================================
+       THEME SYSTEM — UX Architect: light / dark / system
+       ================================================================ */
+    const THEME_KEY = 'greyscope-theme';
+    const html = document.documentElement;
+
+    function applyTheme(theme) {
+        let resolved = theme;
+        if (theme === 'system') {
+            resolved = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+        }
+        html.setAttribute('data-theme', resolved);
+        localStorage.setItem(THEME_KEY, theme);
+        document.querySelectorAll('.theme-btn').forEach(btn => {
+            const active = btn.dataset.themeTarget === theme;
+            btn.classList.toggle('active', active);
+            btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+    }
+
+    applyTheme(localStorage.getItem(THEME_KEY) || 'dark');
+    document.querySelectorAll('.theme-btn').forEach(btn => {
+        btn.addEventListener('click', () => applyTheme(btn.dataset.themeTarget));
+    });
+    matchMedia('(prefers-color-scheme:dark)').addEventListener('change', () => {
+        if (localStorage.getItem(THEME_KEY) === 'system') applyTheme('system');
+    });
+
+    /* ================================================================
+       COUNTDOWN TIMER
+       ================================================================ */
+    const launchDate = new Date(Date.now() + 90 * 86400000); // 90 days from now
+
+    function updateCountdown() {
+        const diff = launchDate - Date.now();
+        if (diff < 0) {
+            ['days','hours','minutes','seconds'].forEach(id => {
+                document.getElementById(id).textContent = '00';
+            });
+            return;
+        }
+        document.getElementById('days').textContent    = String(Math.floor(diff / 86400000)).padStart(2,'0');
+        document.getElementById('hours').textContent   = String(Math.floor(diff % 86400000 / 3600000)).padStart(2,'0');
+        document.getElementById('minutes').textContent = String(Math.floor(diff % 3600000 / 60000)).padStart(2,'0');
+        document.getElementById('seconds').textContent = String(Math.floor(diff % 60000 / 1000)).padStart(2,'0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    /* ================================================================
+       EMAIL SUBSCRIBE — Whimsy Injector: delight on success
+       ================================================================ */
+    const emailInput = document.getElementById('emailInput');
+    const subscribeBtn = document.getElementById('subscribeBtn');
+
+    subscribeBtn.addEventListener('click', subscribe);
+    emailInput.addEventListener('keydown', e => { if (e.key === 'Enter') subscribe(); });
+
+    function subscribe() {
+        const email = emailInput.value.trim();
+        const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+        if (valid) {
+            subscribeBtn.textContent = '✓ Subscribed!';
+            subscribeBtn.classList.add('success');
+            subscribeBtn.disabled = true;
+            emailInput.value = '';
+            triggerConfetti();
+            setTimeout(() => {
+                subscribeBtn.textContent = 'Get Notified';
+                subscribeBtn.classList.remove('success');
+                subscribeBtn.disabled = false;
+            }, 3000);
+        } else {
+            emailInput.classList.add('error');
+            const old = emailInput.placeholder;
+            emailInput.placeholder = 'Enter a valid email ✗';
+            setTimeout(() => {
+                emailInput.classList.remove('error');
+                emailInput.placeholder = old;
+            }, 2500);
+        }
+    }
+
+    /* ================================================================
+       CONFETTI — Whimsy Injector: celebrate the subscribe action
+       ================================================================ */
+    (function injectConfettiKeyframes() {
+        const s = document.createElement('style');
+        s.textContent = '@keyframes dot-fly{0%{transform:translate(0,0) scale(1);opacity:1}100%{transform:translate(var(--dx),var(--dy)) scale(0);opacity:0}}';
+        document.head.appendChild(s);
+    })();
+
+    function triggerConfetti() {
+        const colors = ['#FFAE87','#ffd4b8','#a855f7','#7C3AED','#10b981'];
+        const card = document.querySelector('.launch-card');
+        const r = card.getBoundingClientRect();
+        for (let i = 0; i < 28; i++) {
+            const dot = document.createElement('div');
+            const size = 4 + Math.random() * 6;
+            dot.style.cssText = [
+                'position:fixed',
+                `width:${size}px`, `height:${size}px`,
+                `background:${colors[Math.floor(Math.random() * colors.length)]}`,
+                `border-radius:${Math.random() > 0.5 ? '50%' : '3px'}`,
+                `left:${r.left + r.width * 0.5 + (Math.random() - 0.5) * 40}px`,
+                `top:${r.top + r.height * 0.45}px`,
+                'pointer-events:none', 'z-index:9999',
+                `animation:dot-fly ${600 + Math.random() * 800}ms ease-out forwards`,
+                `--dx:${(Math.random() - 0.5) * 220}px`,
+                `--dy:${-90 - Math.random() * 160}px`
+            ].join(';');
+            document.body.appendChild(dot);
+            setTimeout(() => dot.remove(), 1600);
+        }
+    }
+
+    /* ================================================================
+       MOBILE NAVIGATION
+       ================================================================ */
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('nav-links');
+    const overlay   = document.getElementById('nav-overlay');
+
+    function toggleMenu(forceOpen) {
+        const open = forceOpen ?? !navLinks.classList.contains('active');
+        navLinks.classList.toggle('active', open);
+        overlay.classList.toggle('active', open);
+        overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+        hamburger.setAttribute('aria-expanded', String(open));
+        hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        hamburger.querySelector('i').className = open ? 'fas fa-times' : 'fas fa-bars';
+        document.body.style.overflow = open ? 'hidden' : '';
+    }
+
+    hamburger.addEventListener('click', () => toggleMenu());
+    overlay.addEventListener('click', () => toggleMenu(false));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) toggleMenu(false);
+    });
+
+    /* ================================================================
+       SCROLL REVEAL — Whimsy Injector: entrance animations
+       ================================================================ */
+    const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('visible');
+                revealObs.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    /* ================================================================
+       SMOOTH SCROLL
+       ================================================================ */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function(e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) { e.preventDefault(); target.scrollIntoView({ behavior:'smooth', block:'start' }); }
+        });
+    });
+
+    /* ================================================================
+       NAVBAR scroll intensity — subtle brand accent on scroll
+       ================================================================ */
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        navbar.style.borderBottomColor = scrollY > 40
+            ? 'rgba(255,174,135,0.25)'
+            : 'var(--color-border)';
+    }, { passive: true });
+
+    /* ================================================================
+       GLITCH random trigger — Whimsy Injector: personality moment
+       ================================================================ */
+    setInterval(() => {
+        const g = document.querySelector('.glitch-text');
+        if (g && Math.random() < 0.15) {
+            g.style.filter = 'blur(0.5px)';
+            setTimeout(() => { g.style.filter = ''; }, 180);
+        }
+    }, 4000);
+</script>
+</body>
+</html>
