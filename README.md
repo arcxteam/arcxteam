@@ -27,11 +27,7 @@
     &#9656; &nbsp;Bridging <strong>node-stake infrastructure</strong>, autonomous AI agents &amp; community-powered discovery<br>
     &#9656; &nbsp;Deeply committed to blockchain — from <strong>devnet prototype</strong> to <strong>mainnet production</strong><br>
     &#9656; &nbsp;Empowering Web3 projects to scale strategically with data-driven insights &amp; early-stage discovery<br>
-    &#9656; &nbsp;Passionate about building dApps pivotal during <strong>testnet phase</strong> &amp; hackathon launches<br>
-    &#9656; &nbsp;Reach me:
-    <a href="mailto:team@greyscope.xyz">
-      <img src="https://img.shields.io/badge/-%20-EA4335?style=flat-square&logo=gmail&logoColor=white" title="team@greyscope.xyz" style="vertical-align:middle"/>
-    </a>
+    &#9656; &nbsp;Passionate about building dApps pivotal during <strong>testnet phase</strong> &amp; hackathon launches
   </samp>
 </p>
 
@@ -61,6 +57,9 @@
   </a>
   <a href="https://medium.com/@94n1" target="_blank">
     <img src="https://img.shields.io/badge/-%20-000000?style=for-the-badge&logo=medium&logoColor=white" title="Medium @94n1"/>
+  </a>
+  <a href="mailto:team@greyscope.xyz">
+    <img src="https://img.shields.io/badge/-%20-EA4335?style=for-the-badge&logo=gmail&logoColor=white" title="team@greyscope.xyz"/>
   </a>
 </p>
 
@@ -94,22 +93,9 @@
 
 ![Custom Snake GIF](https://raw.githubusercontent.com/arcxteam/arcxteam/main/assets/custom-snake.gif)
 
-<!--
-  ╔══════════════════════════════════════════════════════════════╗
-  ║  GITANIMALS — cara aktifkan / nonaktifkan:                  ║
-  ║                                                              ║
-  ║  AKTIF   → hapus tag <!-- HIDDEN-START dan HIDDEN-END -->    ║
-  ║  NONAKTIF → bungkus seluruh blok dengan:                    ║
-  ║             <!-- HIDDEN-START                               ║
-  ║             ... blok gambar ...                             ║
-  ║             HIDDEN-END -->                                  ║
-  ║                                                              ║
-  ║  Untuk stop workflow: buka .github/workflows/gitanimals.yml  ║
-  ║  lalu ubah "on:" menjadi "on: [workflow_dispatch]" saja.    ║
-  ╚══════════════════════════════════════════════════════════════╝
--->
-
-<!-- Gitanimals lines — 3 kucing berjalan bersamaan (per-character params) -->
+<!-- Gitanimals lines — kucing & hewan berjalan berdasarkan kontribusi -->
+<!-- Untuk sembunyikan: jadikan tag <a> ini sebagai HTML comment -->
+<!-- Untuk stop workflow: lihat .github/workflows/gitanimals.yml -->
 <a href="https://gitanimals.org" target="_blank">
   <img
     src="https://render.gitanimals.org/lines/arcxteam?with-cat=1&with-cat-ghost=1&with-little-chick=1&with-penguin=1&with-slime=1"
